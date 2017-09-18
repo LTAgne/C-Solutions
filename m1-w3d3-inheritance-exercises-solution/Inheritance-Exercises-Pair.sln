@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankTellerExercise", "BankTellerExercise\BankTellerExercise.csproj", "{1F5999FD-E87D-4D8D-BE7C-60B4B4686060}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoParts", "AutoParts\AutoParts.csproj", "{E173C860-52EC-4345-B93B-866DFF657397}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercises.Tests", "Exercises.Tests\Exercises.Tests.csproj", "{C06FCA38-256A-447E-8555-A37141883375}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1F5999FD-E87D-4D8D-BE7C-60B4B4686060}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F5999FD-E87D-4D8D-BE7C-60B4B4686060}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F5999FD-E87D-4D8D-BE7C-60B4B4686060}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F5999FD-E87D-4D8D-BE7C-60B4B4686060}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E173C860-52EC-4345-B93B-866DFF657397}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E173C860-52EC-4345-B93B-866DFF657397}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E173C860-52EC-4345-B93B-866DFF657397}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E173C860-52EC-4345-B93B-866DFF657397}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C06FCA38-256A-447E-8555-A37141883375}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C06FCA38-256A-447E-8555-A37141883375}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C06FCA38-256A-447E-8555-A37141883375}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C06FCA38-256A-447E-8555-A37141883375}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
