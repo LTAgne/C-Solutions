@@ -1,0 +1,3 @@
+﻿What are the Brown's chances of winning this weekend|Very Likely|Somewhat Likely|Not Likely*|No Way
+Will there be traffic on the way to work tomorrow?|Yes*|No
+Will there be traffic on the way home from work tomorrow?|Yes*|No

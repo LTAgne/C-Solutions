@@ -1,0 +1,4 @@
+﻿This is a test file with 30 words.
+It has 4 sentences in it. Some sentences are on the same line.
+There is another sentence
+that spans two lines.

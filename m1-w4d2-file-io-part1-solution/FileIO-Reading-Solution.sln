@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordSearch", "WordSearch\WordSearch.csproj", "{EF452B69-4CE4-402E-B7E0-292894CC3782}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuizMaker", "QuizMaker\QuizMaker.csproj", "{3ACB6126-9779-4DDB-923B-0A48E7BB5F87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordCount", "WordCount\WordCount.csproj", "{E4A132C5-FAA2-463B-80F4-005A0DA38DDC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4F2680B2-5B0E-40CA-96F1-1362F827EF64}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF452B69-4CE4-402E-B7E0-292894CC3782}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF452B69-4CE4-402E-B7E0-292894CC3782}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF452B69-4CE4-402E-B7E0-292894CC3782}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF452B69-4CE4-402E-B7E0-292894CC3782}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3ACB6126-9779-4DDB-923B-0A48E7BB5F87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ACB6126-9779-4DDB-923B-0A48E7BB5F87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ACB6126-9779-4DDB-923B-0A48E7BB5F87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ACB6126-9779-4DDB-923B-0A48E7BB5F87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4A132C5-FAA2-463B-80F4-005A0DA38DDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4A132C5-FAA2-463B-80F4-005A0DA38DDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4A132C5-FAA2-463B-80F4-005A0DA38DDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4A132C5-FAA2-463B-80F4-005A0DA38DDC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
