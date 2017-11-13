@@ -1,0 +1,32 @@
+﻿@model SSGeek.Models.ViewModels.ConfirmPrivacyViewModel
+
+@{
+    ViewBag.Title = "ConfirmPrivacy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="centeredPanel">
+    <h2>Extra Legal Questions...</h2>
+
+    <p>
+        By completing this application, you <strong>must agree by</strong> allowing us to perform the required background check that admits you to attend
+        our intergalactic mission. We also want to know if we can send you emails too.
+    </p>
+
+    @using (Html.BeginForm("ConfirmPrivacy", "Application", FormMethod.Post))
+    {
+        <div class="form-field">
+            @Html.LabelFor(m => m.DoBackgroundCheck)
+            @Html.CheckBoxFor(m => m.DoBackgroundCheck)
+            @Html.ValidationMessageFor(m => m.DoBackgroundCheck)
+        </div>
+
+        <div class="form-field">
+            @Html.LabelFor(m => m.SendEmails)
+            @Html.CheckBoxFor(m => m.SendEmails)
+            @Html.ValidationMessageFor(m => m.SendEmails)
+        </div>
+
+        <button type="submit">Submit</button>
+    }
+</section>

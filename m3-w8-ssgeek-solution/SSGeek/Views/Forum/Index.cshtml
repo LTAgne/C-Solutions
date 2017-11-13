@@ -1,0 +1,36 @@
+﻿@using SSGeek.Models;
+@model List<SSGeek.Models.ForumPost>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="centeredPanel">
+    <h2>Solar System Geek Forum</h2>
+
+    @if(TempData["Message_Success"] != null)
+    {
+        <p class="centered success-message">Your message has been saved!</p>
+    }
+
+    <a class="centered" href="@Url.Action("NewPost", "Forum")">Post a Message</a>
+
+    <div class="posts">
+        @if (Model.Count > 0)
+        {
+            foreach (ForumPost forumPost in Model)
+            {
+                <div class="post">
+                    <h4 class="title">@forumPost.Subject</h4>
+                    <p class="author">by @forumPost.Username on @forumPost.PostDate.ToString("M/d/yyyy") at @forumPost.PostDate.ToString("h:mm:ss")</p>
+
+                    <p class="message">@forumPost.Message</p>
+                </div>
+            }
+        }
+        else
+        {
+            <p>Make the first post!</p>   
+        }
+    </div>
+</section>

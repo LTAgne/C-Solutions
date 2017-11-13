@@ -1,0 +1,36 @@
+﻿@model Exercises.Models.Recipe
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var imagePath = "/Content/images/" + Model.Id + ".jpg";
+}
+
+<div class="recipe-detail">
+    <img class="recipe-image" src="@imagePath" />
+    <div class="overview">
+        <h3>@Model.Name</h3>
+        <p class="recipe-type">@Model.RecipeType</p>
+        <p class="cook-time"><span class="bold">Cook Time </span>@Model.CookTimeInMinutes minutes</p>
+        <p class="description">@Model.Description</p>
+    </div>
+
+    <div class="ingredients">
+        <h4>Ingredients</h4>
+        <ul>
+            @foreach (var ingredient in Model.Ingredients)
+            {
+                <li class="ingredient">@ingredient.Quantity @ingredient.Name</li>
+            }
+        </ul>
+    </div>
+    <hr/>
+    <div class="preparation">
+        <h4>Preparation</h4>
+        <ol>
+            @foreach (var step in Model.PreparationSteps)
+            {
+                <li class="step">@step</li>
+            }
+        </ol>
+    </div>
+</div>

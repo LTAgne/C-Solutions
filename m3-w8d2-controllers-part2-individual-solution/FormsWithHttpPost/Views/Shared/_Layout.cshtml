@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ASP.NET MVC - Controllers Day 2 (HTTP POST)</title>
+    <link rel="stylesheet" href="~/Content/style.css" />
+</head>
+<body>
+    <header>
+        <h1>ASP.NET MVC - Controllers Day 2 (HTTP POST)</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="@Url.Action("Index", "Home")">See all reviews</a></li>
+            <li><a href="@Url.Action("NewReview", "Home")">Submit a review</a></li>
+        </ul>
+    </nav>
+    <section id="main-content">
+        @RenderBody()
+    </section>
+</body>
+</html>
+

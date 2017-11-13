@@ -1,0 +1,86 @@
+﻿@model List<Exercises.Models.Product>
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Table</title>
+    <link href="~/Content/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <h1>MVC Exercises - Views Part 2: Models</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">List Layout</a></li>
+            <li><a href="#">Tile Layout</a></li>
+            <li><a href="#">Table Layout</a></li>
+        </ul>
+
+    </nav>
+
+    <section id="main-content">
+
+        <h2>Toy Department</h2>
+        <table>
+            <tr>
+                <td></td>
+                @foreach (var product in Model)
+                {
+                    var imagePath = "/Content/images/" + product.ImageName;
+                    <td>
+                        <img class="product-image" src="@imagePath" />
+                        @if (product.IsTopSeller)
+                        {
+                            <span class="best-seller">BEST SELLER!</span>
+                        }
+                    </td>
+                }
+            </tr>
+            <tr>
+                <td>Name</td>
+                @foreach (var product in Model)
+                {
+                    <td>
+                        @product.Name
+                    </td>
+                }
+            </tr>
+            <tr>
+                <td>Rating</td>
+                @foreach (var product in Model)
+                {
+                    var starPath = "/Content/images/" + Math.Round(product.AverageRating, 0) + "-star.png";
+                    <td><img class="rating" src="@starPath" /></td>
+                }
+            </tr>
+            <tr>
+                <td>Mfr</td>
+                @foreach (var product in Model)
+                {
+                    <td>@product.Manufacturer</td>
+                }
+            </tr>
+            <tr>
+                <td>Price</td>
+                @foreach (var product in Model)
+                {
+                    <td class="price">@product.Price.ToString("C")</td>
+                }
+            </tr>
+            <tr>
+                <td>wt. (in lbs)</td>
+                @foreach (var product in Model)
+                {
+                    <td>@product.WeightIbLbs</td>
+                }
+            </tr>
+        </table>
+    </section>
+</body>
+</html>

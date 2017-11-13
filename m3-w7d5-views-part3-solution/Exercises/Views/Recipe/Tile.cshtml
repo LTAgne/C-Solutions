@@ -1,0 +1,24 @@
+﻿@model Dictionary<string, Exercises.Models.Recipe>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Recipe List";
+}
+<h2>Recipes</h2>
+
+<div class="recipe-list">
+    @foreach (var recipeKVP in Model)
+            {
+                var imagePath = "/Content/images/" + recipeKVP.Key + ".jpg";
+                var starPath = "/Content/images/" + Math.Round(recipeKVP.Value.AverageRating, 0) + "-star.png";
+        <div class="recipe">
+            <div>
+                <a href="@Url.Action("Detail", "Recipe", new { id = recipeKVP.Key })"><img class="recipe-image" src="@imagePath" /></a>
+                <h3 class="recipe-name">@recipeKVP.Value.Name</h3>
+            </div>
+            <div>
+                <img class="rating" src="@starPath" />
+                <p class="ingredient-count">@recipeKVP.Value.Ingredients.Count ingredients</p>
+            </div>
+        </div>
+    }
+</div>

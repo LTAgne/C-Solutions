@@ -1,0 +1,35 @@
+﻿@model List<FormsWithHttpPost.Models.Review>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<img src="~/Content/forDummies.png" />
+<h2>Past Reviews</h2>
+<div class="reviews">
+
+    @foreach (var review in Model)
+    {
+        <div class="review">
+            <h4 class="title">
+                @review.Title
+            @for (var i = 0; i < review.Rating; i++)
+                {
+                <img class="star" src="~/Content/star.png" />
+            }
+        </h4>
+        <p class="author">
+            by @review.Username on @review.ReviewDate.ToString("m/dd/yyyy")
+
+
+        </p>
+
+
+
+        <p class="content">@review.Message</p>
+    </div>
+    }
+
+</div>
+
+<a href="@Url.Action("NewReview", "Home")">Submit a new review</a>

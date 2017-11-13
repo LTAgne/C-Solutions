@@ -1,0 +1,33 @@
+﻿@model Exercises.Models.Product
+
+@{    
+    ViewBag.Title = "Product Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var imagePath = "/Content/images/" + Model.ImageName;
+    var starPath = "/Content/images/" + Math.Round(Model.AverageRating, 0) + "-star.png";
+
+}
+
+
+<div class="toy-detail">
+    <img class="product-image" src=@imagePath />
+    <div class="product-description">
+        <h3>
+            @Model.Name
+            @if (Model.IsTopSeller)
+            {
+                <span class="best-seller">BEST SELLER!</span>
+            }
+        </h3>
+        <p class="manufacturer">by @Model.Manufacturer</p>
+        <img class="rating" src="@starPath" />
+        <p class="price">Price: @Model.Price.ToString("C")</p>        
+        @if (Model.RemainingStock < 5)
+        {
+            <p class="alert-remaining">Only @Model.RemainingStock left in stock.</p>
+        }
+        <p class="weight"><span class="bold">Weight</span> @Model.WeightIbLbs lbs</p>
+        <p class="description"><span class="bold">Description: </span>@Model.Description</p>    
+    </div>
+    
+</div>

@@ -1,0 +1,34 @@
+﻿@model SSGeek.Models.Product
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="centeredPanel">
+    <h2>Solar System Geek Gift Shop</h2>
+
+    <div class="product-detail">
+        <img src="@Url.Content("~/Content/img/" + Model.ImageName)" />
+        <div class="product-data">
+            <p class="title">@Model.Name</p>
+            <p class="price">@Model.Price.ToString("C")</p>
+            <p class="description">@Model.Description</p>
+
+            @using (Html.BeginForm("AddToCart", "Store", FormMethod.Post))
+            {
+                @Html.HiddenFor(m => m.ProductId)
+                <div>
+                    @Html.Label("Quantity", "Quantity to buy")
+                    <input type="number" name="quantity" />
+                    <button>
+                        Add to Cart
+                    </button>
+                </div>
+                
+            }
+        </div>
+    </div>
+
+    
+
+</section>

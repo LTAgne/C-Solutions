@@ -1,0 +1,64 @@
+﻿@model List<Exercises.Models.Product>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Product Table";
+}
+
+<h2>Toy Department</h2>
+<table>
+    <tr>
+        <td></td>
+        @foreach (var product in Model)
+        {
+            var imagePath = "/Content/images/" + product.ImageName;
+            <td>
+                <a href="@Url.Action("Detail", "Product", new { id = product.ProductId})">
+                    <img class="product-image" src=@imagePath />
+                </a>
+                @if (product.IsTopSeller)
+                {
+                    <span class="best-seller">BEST SELLER!</span>
+                }
+            </td>
+        }
+    </tr>
+    <tr>
+        <td>Name</td>
+        @foreach (var product in Model)
+        {
+            <td>
+                @product.Name
+            </td>
+        }
+    </tr>
+    <tr>
+        <td>Rating</td>
+        @foreach (var product in Model)
+        {
+            var starPath = "/Content/images/" + Math.Round(product.AverageRating, 0) + "-star.png";
+            <td><img class="rating" src="@starPath" /></td>
+        }
+    </tr>
+    <tr>
+        <td>Mfr</td>
+        @foreach (var product in Model)
+        {
+            <td>@product.Manufacturer</td>
+        }
+    </tr>
+    <tr>
+        <td>Price</td>
+        @foreach (var product in Model)
+        {
+            <td class="price">@product.Price.ToString("C")</td>
+        }
+    </tr>
+    <tr>
+        <td>wt. (in lbs)</td>
+        @foreach (var product in Model)
+        {
+            <td>@product.WeightIbLbs</td>
+        }
+    </tr>
+</table>

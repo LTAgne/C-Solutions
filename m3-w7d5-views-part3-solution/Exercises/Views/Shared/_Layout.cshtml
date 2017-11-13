@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <h1>MVC Exercises - Views Part 3: Detail Views</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">List Layout</a></li>
+            <li><a href="#">Tile Layout</a></li>
+            <li><a href="#">Table Layout</a></li>
+        </ul>
+
+    </nav>
+
+    <section id="main-content">
+        @RenderBody()
+    </section>
+</body>

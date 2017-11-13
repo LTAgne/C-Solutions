@@ -1,0 +1,239 @@
+﻿/* TEMPLATE STYLES */
+
+body {
+    width: 100%;
+    background-color: #212121;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body, header, nav {
+    margin: 0px;
+}
+
+header {
+    background-color: #0099CC;
+    color: white;
+    padding: 10px 10px;
+}
+
+
+nav {
+    background-color: #8DC63F;
+    margin-bottom: 20px;
+    padding: 5px;
+    height: 50px;
+}
+
+    nav ul {
+        float: left;
+    }
+
+    nav li {
+        list-style-type: none;
+        color: white;
+        margin-left: 25px;
+        margin-bottom: 10px;
+        font-size: 1.3em;
+        float: left;
+    }
+
+        nav li a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+            nav li a:hover {
+                text-decoration: underline;
+            }
+
+section {
+    clear: both;
+    display: block;
+    width: 80%;
+    margin: 20px auto;
+    vertical-align: top;
+    text-align: center;
+    min-height: 450px;
+    background-color: #FFF;
+    border-radius: 7px;
+}
+
+/* Individual Page Styles */
+
+.bold {
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 2.0em;
+}
+
+img.rating {
+    height: 20px;
+}
+
+img.product-image {
+    width: 50%;
+}
+
+.best-seller {
+    color: red;
+    font-size: 0.8em;
+}
+
+.toy-list {
+    padding: 0px 10px;
+}
+
+    .toy-list .toy {
+        vertical-align: top;
+        padding: 0px 50px;
+        text-align: left;
+    }
+
+        .toy-list .toy div {
+            vertical-align: top;
+        }
+
+    .toy-list p, h3 {
+        margin: 0px;
+    }
+
+
+    .toy-list div:last-child hr {
+        display: none;
+    }
+
+
+
+    .toy-list .details {
+        display: inline-block;
+    }
+
+    .toy-list img.product-image {
+        width: 200px;
+        margin-right: 40px;
+        display: inline-block;
+    }
+
+
+
+.price {
+    margin-top: 10px;
+    font-weight: bolder;
+    color: #B12704;
+    font-size: 1.2em;
+}
+
+.alert-remaining {
+    color: #0099CC;
+    font-weight: bold;
+}
+
+.tile-list {
+    padding: 0px 10px 20px 10px;
+}
+
+    .tile-list .toy {
+        display: inline-block;
+        width: 33%;
+    }
+
+    .tile-list h3, p {
+        margin: 0px;
+    }
+
+table {
+    margin: 0px 10px;
+}
+
+    table tr img {
+        display: block;
+    }
+
+    table tr td:first-child {
+        font-weight: bold;
+    }
+
+    table tr td img {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    table tr td:not(:first-child) {
+        text-align: center;
+    }
+
+    table tr td:first-child {
+        width: 10%;
+    }
+
+table {
+    border-collapse: collapse;
+}
+
+    table tr:nth-child(2n) td:not(:first-child) {
+        background-color: lightgray;
+    }
+
+
+
+
+/* Recipe List Styles */
+.recipe-list {
+    padding-left: 50px;
+    padding-right: 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+    .recipe-list .recipe {
+        background-color: #EFF7E0;
+        width: 32%;
+        vertical-align: top;
+        color: #000;
+    }
+
+
+
+    .recipe-list .recipe-image {
+        width: 100%;
+    }
+
+
+
+    .recipe-list .recipe-name {
+        font-weight: bold;
+        font-size: 1.5em;
+        margin: 0px 10px;
+        text-align: left;
+    }
+
+    .recipe-list .rating {
+        text-align: left;
+        margin: 0 10px;
+        float: left;
+    }
+
+.recipe div:first-child {
+    height: 350px;
+}
+
+.recipe-list .ingredient-count {
+    text-align: right;
+    float: right;
+    margin-right: 10px;
+}
+
+
+
+.recipe-table img {
+    width: 150px;
+}
+
+    .recipe-table tr:nth-child(2n) td:not(:first-child) {
+        width: 30%;
+    }

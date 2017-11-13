@@ -1,0 +1,11 @@
+﻿@model SSGeek.Models.AlienWeightModel
+
+@{
+    ViewBag.Title = "AlienWeightResult";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="calculatorResult" class="centeredPanel">
+    <img src="@Url.Content("/Content/img/" + Model.AlienPlanet + ".jpg")" />
+    <h2>If you are @Model.EarthWeight lbs on planet Earth, you would weigh @Math.Round(Model.AlienWeight, 2) lbs on @Model.AlienPlanet.</h2>
+</section>

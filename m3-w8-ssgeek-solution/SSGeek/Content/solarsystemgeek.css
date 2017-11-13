@@ -1,0 +1,376 @@
+﻿body {
+    background-color: #000000;    
+    width: 90%;
+    font-family: sans-serif;
+    margin: 0 auto;
+}
+
+ul { 
+    padding: 0px;
+}
+
+h1 {
+    font-size: 22px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+p, label, div.form-field {
+    font-size: 14px;
+}
+
+header {
+    margin: 25px;
+}
+
+    header h1 {
+        font-size: 30px;
+        color: #FFFFFF;
+    }
+
+    header p {
+        color: #FFFFFF;
+        font-size: 12px;
+    }
+
+    header img {
+        height: 110px;
+    }
+
+nav {
+    margin-top: 25px;    
+}
+
+nav h2, nav p {
+    color: #FFF;
+    margin-left: 25px;
+}
+
+    nav p {
+        font-size: 12px;
+        font-style: italic;        
+    }
+
+
+
+li {
+    padding-bottom: 4px;
+}
+
+    li a {
+        color: #0D118B;
+        text-decoration: none;
+        font-size: 18px;
+        text-align: center;
+    }
+
+nav ul {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+    nav ul li {
+        background-color: #FFF;
+        border-radius: 8px;
+        list-style: none;
+        text-align: center;
+        flex-grow: 1;
+        padding-top: 5px;
+        margin: 0 10px;
+        max-width: 200px;
+    }
+
+
+
+li a:hover {
+    text-decoration: underline;
+}
+
+#planets  {
+    display: flex;
+}
+
+.planets * {
+    color: #FFFFFF;
+}
+
+
+
+
+.planets p {
+    width: 80%;
+    margin: 25px;
+    text-align: left;
+}
+
+.planets img {
+    width: 250px;
+    height: 250px;
+    border-color: #FFFFFF;
+    border-width: 8px;
+    border-style: solid;
+}
+
+.planets {            
+    text-align: center;
+}
+
+.planet {
+    min-height: 700px;
+    vertical-align: top;
+    width: 80%;
+    margin: 0 auto;
+}
+
+    .planet p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+.value {
+    color: green;
+    font-weight: bold;
+}
+
+form div {
+    padding: 10px 0px;
+}
+
+    form div label {
+        width: 200px;
+        display: inline-block;
+        vertical-align: top;
+        padding-left: 25px;
+        color: black;
+    }
+
+form .field-validation-error {
+    color: red;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+form button {
+    text-align: center;
+    margin-left: 229px;
+}
+
+input[type=text], input[type=datetime], textarea {
+    width: 300px;
+}
+
+th, td {
+    color: white;
+}
+
+table tr:first-child {
+    padding-bottom: 10px;
+    font-size: 1.1em;
+}
+
+table td {
+    min-width: 75px;
+    padding: 5px 5px;
+}
+
+
+
+section.centeredPanel {
+    clear: both;
+    display: block;
+    width: 90%;
+    vertical-align: top;
+    min-height: 450px;
+    background-color: #FFF;
+    border-radius: 7px;
+    margin: 20px auto;    
+}
+
+    section.centeredPanel h2 {
+        color: #000000;
+        text-align: center;
+        padding-top: 15px;
+    }
+
+    section.centeredPanel p {
+        color: #000;
+        text-align: left;
+    }
+
+.centered {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+
+.success-message {
+    background-color: #5CB85C;
+    text-align: center !important;
+    color: #FFF !important;
+    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
+/* Calculator Result */
+section#calculatorResult img {
+    float: left;
+    width: 200px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+section#calculatorResult h2 {
+    float: left;
+    width: 50%;
+    text-align: left;
+}
+
+
+/* Space Forum Posts */
+.posts {
+    padding: 10px;
+}
+
+    .posts .post {
+        padding-left: 10px;
+        padding-top: 10px;
+    }
+
+        .posts .post * {
+            color: #000;
+            margin: 0;
+        }
+
+        .posts .post h4 {
+            padding-top: 5px;
+        }
+
+        .posts .post p.message {
+            margin-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .posts .post:nth-child(2n) {
+            background-color: lightgray;
+        }
+
+/* shopping cart styles */
+.products {
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.product p {
+    margin: 0;
+}
+
+.products p.title {
+    font-size: 1.0em;
+}
+
+
+.product-name a {
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+}
+
+    .product-name a:hover {
+        text-decoration: underline;
+    }
+
+.product-detail img {
+    height: 50%;
+    display: inline-block;
+    margin: 0 auto;
+    width: 25%;
+}
+
+.product-image {
+    display: inline-block;
+    width: 20%;
+}
+
+    .product-image a {
+        text-align: center;
+        display: block;
+    }
+
+    .product-image img {
+        width: 75%;
+        height: 50%;
+    }
+
+.product-data {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+}
+
+    .product-data p {
+        margin: 10px;
+    }
+
+
+    .product-data .title {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+    .product-data .price {
+        font-size: 1.2em;
+        color: cornflowerblue;
+        font-weight: bold;
+    }
+
+    .product-data label {
+        width: 150px;
+    }
+
+    .product-data input {
+        width: 200px;
+    }
+
+    .product-data button {
+        background-color: cornflowerblue;
+        padding: 5px;
+        color: #FFF;
+        margin-left: 10px;
+    }
+
+table.shopping-cart {
+    padding: 10px;
+}
+
+    table.shopping-cart img {
+        height: 35%;
+        width: 75%;
+    }
+
+    table.shopping-cart td {
+        color: #000;
+    }
+
+    table.shopping-cart tr:first-child {
+        font-weight: bold;
+    }
+
+    table.shopping-cart tr td:first-child {
+        width: 25%;
+    }
+
+tr.grand-total td:first-child,
+tr.checkout td:first-child {
+    text-align: right;
+    font-weight: bold;
+}

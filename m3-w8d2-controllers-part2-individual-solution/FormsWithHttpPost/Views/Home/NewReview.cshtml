@@ -1,0 +1,29 @@
+﻿@model FormsWithHttpPost.Models.Review
+@{
+    ViewBag.Title = "NewReview";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Book Review</h2>
+
+@using (Html.BeginForm("NewReview", "Home", FormMethod.Post))
+{
+    <div class="form-field">
+        @Html.Label("username", "Enter your username")
+        @Html.TextBoxFor(m => m.Username)
+    </div>
+    <div class="form-field">
+        @Html.Label("rating", "How many stars?")
+        @Html.TextBoxFor(m => m.Rating)
+    </div>
+    <div class="form-field">
+        @Html.Label("title", "Provide a title")
+        @Html.TextBoxFor(m => m.Title)
+    </div>
+    <div class="form-field">
+        @Html.Label("message", "Review")
+        @Html.TextAreaFor(m => m.Message)
+    </div>
+
+    <button>Submit!</button>
+}

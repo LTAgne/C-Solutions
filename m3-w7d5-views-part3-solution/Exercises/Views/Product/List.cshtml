@@ -1,0 +1,46 @@
+﻿@model List<Exercises.Models.Product>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Product List";
+}
+
+<h2>Toy Department</h2>
+<div class="toy-list">
+
+    @foreach (var product in Model)
+            {
+        <div class="toy">
+            @{
+                var imagePath = "/Content/images/" + product.ImageName;
+                var starPath = "/Content/images/" + Math.Round(product.AverageRating, 0) + "-star.png";
+            }
+            <a href="@Url.Action("Detail", "Product", new { id = product.ProductId})">
+                <img class="product-image" src=@imagePath />
+            </a>
+            <div class="details">
+                <h3>
+                    @product.Name
+                    @if (product.IsTopSeller)
+                    {
+                        <span class="best-seller">BEST SELLER!</span>
+                    }
+                </h3>
+                <p class="manufacturer">by @product.Manufacturer</p>
+                @if (product.RemainingStock < 5)
+                {
+                    <p class="alert-remaining">Only @product.RemainingStock left!</p>
+                }
+                <p class="price">@product.Price.ToString("C")</p>
+                <p class="weight"><span class="bold">Weight</span> @product.WeightIbLbs lbs</p>
+
+                <img class="rating" src="@starPath" />
+
+
+            </div>
+            <hr />
+        </div>
+
+                }
+
+</div>

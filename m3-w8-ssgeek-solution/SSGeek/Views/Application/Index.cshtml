@@ -1,0 +1,53 @@
+﻿@model SSGeek.Models.ViewModels.ContactInfoViewModel
+
+@{
+    ViewBag.Title = "Apply Here";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="centeredPanel">
+    <h2>We're Hiring!</h2>
+
+    <p>Interested in working for Solar System Geek? We have an extremely intensive application process to make sure that we only take on the best and the brightest into
+    the space exploration program. You will have opportunity to shoot for your dreams when you're out there floating amongst the cosmos in our state of the art Space Station.</p>
+
+    @using (Html.BeginForm("Index", "Application", FormMethod.Post))
+    {
+        <div class="form-field">
+            @Html.LabelFor(m => m.FirstName)
+            @Html.TextBoxFor(m => m.FirstName)
+            @Html.ValidationMessageFor(m => m.FirstName)
+        </div>
+        <div class="form-field">
+            @Html.LabelFor(m => m.LastName)
+            @Html.TextBoxFor(m => m.LastName)
+            @Html.ValidationMessageFor(m => m.LastName)
+        </div>
+        <div class="form-field">
+            @Html.LabelFor(m => m.State)
+            @Html.DropDownList("State", new List<SelectListItem>()
+            {
+               new SelectListItem() { Text = "Ohio", Value = "OH"},
+               new SelectListItem() { Text = "Michigan", Value = "MI"},
+            })
+        </div>
+        <div class="form-field">
+            @Html.LabelFor(m => m.PostalCode)
+            @Html.TextBoxFor(m => m.PostalCode)
+            @Html.ValidationMessageFor(m => m.PostalCode)
+        </div>
+        <div class="form-field">
+            @Html.LabelFor(m => m.Email)
+            @Html.TextBoxFor(m => m.Email)
+            @Html.ValidationMessageFor(m => m.Email)
+        </div>
+        <div class="form-field">
+            @Html.LabelFor(m => m.ConfirmEmail)
+            @Html.TextBoxFor(m => m.ConfirmEmail)
+            @Html.ValidationMessageFor(m => m.ConfirmEmail)
+        </div>
+
+        <button type="submit">Next Page</button>
+    }
+</section>
+

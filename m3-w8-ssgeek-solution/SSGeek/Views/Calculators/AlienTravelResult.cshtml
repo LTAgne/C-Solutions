@@ -1,0 +1,11 @@
+﻿@model SSGeek.Models.AlienTravelModel
+@{
+    ViewBag.Title = "AlienTravelResult";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="calculatorResult" class="centeredPanel">
+    <img src="@Url.Content("/Content/img/" + Model.AlienPlanet + ".jpg")" />
+    <h2>Traveling by @Model.ModeOfTransport you will reach @Model.AlienPlanet in @Math.Round(Model.GetDriveTimeInYears(), 2) years. You will be @Math.Round(Model.GetFinalEarthAge(), 2) years old.</h2>      
+</section>
+

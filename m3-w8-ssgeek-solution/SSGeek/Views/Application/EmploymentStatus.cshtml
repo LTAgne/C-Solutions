@@ -1,0 +1,52 @@
+﻿@model SSGeek.Models.ViewModels.EmploymentStatusViewModel
+
+@{
+    ViewBag.Title = "EmploymentStatus";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="centeredPanel">
+    <h2>Current Employment</h2>
+
+    <p>
+        We want to validate that you have prior work experience. Unfortunately, we can't ask you for your W2 (although we'd like to) so we're going to hope that you are honest by uploading your current
+        employment status.
+    </p>
+
+
+    @using (Html.BeginForm("EmploymentStatus", "Application", FormMethod.Post))
+    {
+        <div class="form-field">
+            @Html.LabelFor(m => m.EmploymentStatus)
+            @Html.DropDownList("EmploymentStatus", new List<SelectListItem>()
+               {
+                new SelectListItem() { Text = "Full-Time Employment", Value="Full-Time"},
+                new SelectListItem() { Text = "Part-Time Employment", Value="Part-Time"},
+                new SelectListItem() { Text = "Student", Value="Student"},
+               })
+        </div>
+        <div class="form-field">
+            @Html.LabelFor(m => m.LastEmployer)
+            @Html.TextBoxFor(m => m.LastEmployer)
+            @Html.ValidationMessageFor(m => m.LastEmployer)
+        </div>
+        <div class="form-field">
+            @Html.LabelFor(m => m.LastEmployerCity)
+            @Html.TextBoxFor(m => m.LastEmployerCity)
+            @Html.ValidationMessageFor(m => m.LastEmployerCity)
+        </div>
+        <div class="form-field">
+            @Html.LabelFor(m => m.LastEmployerStartDate)
+            @Html.EditorFor(m => m.LastEmployerStartDate)
+            @Html.ValidationMessageFor(m => m.LastEmployerStartDate)
+        </div>
+        <div class="form-field">
+            @Html.LabelFor(m => m.LastEmployerEndDate)
+            @Html.EditorFor(m => m.LastEmployerEndDate)
+            @Html.ValidationMessageFor(m => m.LastEmployerEndDate)
+        </div>
+
+        <button type="submit">Next Page</button>
+    }
+</section>
+

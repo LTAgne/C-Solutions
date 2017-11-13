@@ -1,0 +1,29 @@
+﻿@model List<SSGeek.Models.Product>
+@{
+    ViewBag.Title = "Solar System Geek Gift Shop";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="centeredPanel">
+
+    <h2>Solar System Geek Gift Shop</h2>
+
+    <div class="products">
+        @foreach (var product in Model)
+        {
+            <div class="product">
+                <div class="product-image">
+                    <a href="@Url.Action("Detail", "Store", new { id = product.ProductId })">
+                        <img src="@Url.Content("~/Content/img/" + product.ImageName)" />
+                    </a>
+                </div>
+                <div class="product-data">
+                    <p class="title">@product.Name</p>
+                    <p class="price">@product.Price.ToString("C")</p>
+                </div>
+
+
+            </div>
+        }
+    </div>
+</section>

@@ -1,0 +1,83 @@
+﻿@model Dictionary<string, Exercises.Models.Recipe>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Board</title>
+    <link href="~/Content/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <h1>MVC Exercises - Views Part 2: Models</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Board Layout</a></li>
+            <li><a href="#">Tile Layout</a></li>
+            <li><a href="#">Table Layout</a></li>
+        </ul>
+
+    </nav>
+
+    <section id="main-content">
+
+        <h2>Recipes</h2>
+
+        <table class="recipe-table">
+            <tr>
+                <td></td>
+                @foreach (var recipeKVP in Model)
+                {
+                    var imagePath = "/Content/images/" + recipeKVP.Key + ".jpg";
+                    var starPath = "/Content/images/" + Math.Round(recipeKVP.Value.AverageRating, 0) + "-star.png";
+
+                    <td><img class="recipe-image" src="@imagePath" /></td>
+                }                
+            </tr>
+            <tr>
+                <td>Name</td>
+                @foreach(var recipeKVP in Model)
+                {
+                    <td>@recipeKVP.Value.Name</td>
+                }
+            </tr>
+            <tr>
+                <td>Type</td>
+                @foreach (var recipeKVP in Model)
+                {
+                    <td>@recipeKVP.Value.RecipeType</td>
+                }
+            </tr>
+            <tr>
+                <td>Cook Time</td>
+                @foreach (var recipeKVP in Model)
+                {
+                    <td>@recipeKVP.Value.CookTimeInMinutes min</td>
+                }
+            </tr>
+            <tr>
+                <td>Ingredients</td>
+                @foreach (var recipeKVP in Model)
+                {
+                    <td>@recipeKVP.Value.Ingredients.Count ingredients</td>
+                }
+            </tr>
+            <tr>
+                <td>Rating</td>
+                @foreach (var recipeKVP in Model)
+                {
+                    var starPath = "/Content/images/" + Math.Round(recipeKVP.Value.AverageRating, 0) + "-star.png";
+                    <td><img src="@starPath" /></td>
+                }
+            </tr>
+        </table>
+
+    </section>
+</body>
+</html>

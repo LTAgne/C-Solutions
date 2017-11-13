@@ -1,0 +1,12 @@
+﻿@model SSGeek.Models.AlienAgeModel
+
+@{
+    ViewBag.Title = "Alien Age Result";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="calculatorResult" class="centeredPanel">    
+    <img src="@Url.Content("/Content/img/" + Model.AlienPlanet + ".jpg")" />
+    <h2>If you are @Model.EarthAgeInYears years old on planet Earth, then you are @Math.Round(Model.GetAlienAge(), 2) @Model.AlienPlanet years old.</h2>
+</section>
+

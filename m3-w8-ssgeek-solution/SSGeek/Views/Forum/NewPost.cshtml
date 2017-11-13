@@ -1,0 +1,28 @@
+﻿@model SSGeek.Models.ForumPost
+@{
+    ViewBag.Title = "NewPost";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="centeredPanel">
+    <h2>New Geek Post</h2>
+
+    @using (Html.BeginForm("NewPost", "Forum", FormMethod.Post))
+    {
+        <div class="form-field">
+            @Html.Label("username", "Username")
+            @Html.TextBoxFor(m => m.Username)            
+        </div>
+        <div class="form-field">
+            @Html.Label("subject", "Subject")
+            @Html.TextBoxFor(m => m.Subject)
+        </div>
+        <div class="form-field">
+            @Html.Label("message", "Message")
+            @Html.TextAreaFor(m => m.Message)
+        </div>
+
+        <button type="submit">Submit!</button>
+    }
+</section>
+

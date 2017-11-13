@@ -1,0 +1,47 @@
+﻿@model SSGeek.Models.ShoppingCart
+@{
+    ViewBag.Title = "Shopping Cart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="centeredPanel">
+    <h2>Solar System Geek Gift Shop</h2>
+
+    @if (Model.Items.Count > 0)
+    {
+
+        <table class="shopping-cart">
+            <tr>
+                <td></td>
+                <td>Name</td>
+                <td>Price</td>
+                <td>Qty.</td>
+                <td>Total</td>
+            </tr>
+            @foreach (var item in Model.Items)
+            {
+                <tr>
+                    <td><img src="@Url.Content("~/Content/img/" + item.Product.ImageName)" /></td>
+                    <td>@item.Product.Name</td>
+                    <td>@item.Product.Price.ToString("C")</td>
+                    <td>@item.Quantity</td>
+                    <td>@item.Subtotal.ToString("C")</td>
+                </tr>
+            }
+            <tr class="grand-total">
+                <td colspan="4">Grand Total</td>
+                <td>@Model.GrandTotal.ToString("C")  
+            </tr>
+            <tr class="checkout">
+                <td colspan="4"></td>
+                <td>@Html.ActionLink("Check out", "Checkout", "Store")</td>
+            </tr>
+        </table>
+
+        
+    }
+    else
+    {
+        <p>There aren't any items in your cart.</p>
+    }
+</section>
