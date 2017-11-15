@@ -1,0 +1,32 @@
+﻿@using Critter.Web.Extensions;
+@model List<Critter.Web.Models.Data.Message>
+@{
+    ViewBag.Title = "Sent Messages";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Sent Messages</h2>
+
+<ol class="message-list">
+    @foreach (var message in Model)
+    {
+        <li class="message">
+            @if (message.IsPrivate)
+            {
+                <span class="message-text">
+                    <span>@Html.ActionLink("@" + message.Recipient, "GetConversationThread", "Messages", new { forUser = message.Recipient, withUser = message.Sender }, null)</span>
+                    @message.MessageText
+                </span>
+            }
+            else
+            {
+                <span class="message-text">
+                    @message.MessageText
+                </span>
+            }
+            <a class="message-delete" title="delete" href="@Url.Action("DeleteMessage", "Messages", new { username = message.Sender, messageId = message.MessageId })"><span class="glyphicon glyphicon-remove"></span></a>
+            <time class="timeago timestamp" datetime="@message.CreatedDate.ToString("o")">@message.CreatedDate.TimeAgo()</time>
+        </li>
+    }
+
+</ol>

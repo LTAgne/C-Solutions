@@ -1,0 +1,56 @@
+﻿@model Critter.Web.Models.NewMessageViewModel
+@{
+    ViewBag.Title = "NewMessage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script>
+    //only add the Recipient to the page when the Private message option is selected
+    $(document).ready(function () {
+        var critterService = new critterApiService();
+        
+        $recipient = $("#Recipient").parent().detach();
+        
+
+        $("#IsPrivate").change(function (event) {
+            if ($(this).val() == "True") {
+                $(this).parent().after($recipient);                
+            } else {
+                $recipient = $("#Recipient").parent().detach();
+            }
+        });
+
+        
+    });
+</script>
+
+
+<h2>New Message</h2>
+
+<div class="row">
+    <div class="col-md-5">
+        @using (Html.BeginForm("NewMessage", "Messages", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+                <select id="IsPrivate" name="IsPrivate" class="form-control">
+                    <option value="False">Public</option>
+                    <option value="True">Private</option>                    
+                </select>                
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Recipient)
+                @Html.TextBoxFor(m => m.Recipient, new { @class = "form-control", placeHolder = "Enter recipient" })
+                @Html.ValidationMessageFor(m => m.Recipient)
+            </div>
+
+            <div class="form-group">
+                @Html.TextAreaFor(m => m.MessageText, new { @class = "form-control", rows=3, cols=50, placeHolder = "Your message goes here (140 character max)", maxlength = 140})
+            </div>
+
+            <button type="submit" class="btn btn-default">Submit</button>
+        }
+    </div>
+    <div class="col-md-9"></div>
+</div>

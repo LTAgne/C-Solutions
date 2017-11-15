@@ -1,0 +1,26 @@
+﻿@using Critter.Web.Extensions;
+@model List<Critter.Web.Models.Data.Conversation>
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Latest Private Messages</h2>
+
+<ol class="message-list">
+    @foreach (var conversation in Model)
+    {
+        <li id="conversation_@conversation.WithUser" class="message">
+            <span class="username">@Html.ActionLink(conversation.WithUser, "GetConversationThread", "Messages", new { forUser = conversation.ForUser, withUser = conversation.WithUser }, null)</span>
+            <span class="message-text">@conversation.Messages[0].MessageText</span>
+            <time class="timeago timestamp" datetime="@conversation.Messages[0].CreatedDate.ToString("o")">@conversation.Messages[0].CreatedDate.TimeAgo()</time>
+        </li>
+    }
+    
+</ol>
+
+<script>
+    $(document).ready(function () {
+        setInterval(refreshConversationFeed, 5000);
+    });
+</script>

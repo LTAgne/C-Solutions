@@ -1,0 +1,27 @@
+﻿@using Critter.Web.Extensions;
+@model Critter.Web.Models.Data.User
+
+@if (Model == null) //unauthenticated
+{   
+    <ul class="nav navbar-nav navbar-right">
+        <li class="@Html.IsSelected("Users", "NewUser", "active")">@Html.ActionLink("Sign Up", "NewUser", "Users")</li>
+        <li class="@Html.IsSelected("Users", "Login", "active")">@Html.ActionLink("Log In", "Login", "Users")</li>
+    </ul>
+}
+else //authenticated
+{
+    <ul class="nav navbar-nav">
+        <li class="@Html.IsSelected("Home", "Index", "active")">@Html.ActionLink("Home", "Index", "Home")</li>
+        <li class="@Html.IsSelected("Messages", "Dashboard", "active")">@Html.ActionLink("Private Messages", "Dashboard", "Messages", new { username = Model.Username }, null)</li>
+        <li class="@Html.IsSelected("Messages", "NewMessage", "active")">@Html.ActionLink("New Message", "NewMessage", "Messages", new { username = Model.Username }, null)</li>
+        <li class="@Html.IsSelected("Messages", "SentMessages", "active")">@Html.ActionLink("Sent Messages", "SentMessages", "Messages", new { username = Model.Username }, null)</li>
+        <li class="@Html.IsSelected("Messages", "ChangePassword", "active")">@Html.ActionLink("Change Password", "ChangePassword", "Users", new { username = Model.Username }, null)</li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="@Url.Action("Dashboard", "Messages", new { username = Model.Username })">Hello @Model.Username</a></li>
+        <li>@Html.ActionLink("Log Out", "Logout", "Users")</li>
+    </ul>
+
+        
+}

@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />    
+    <title>Critter</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="~/Content/img/favicon.ico" />
+    <link rel="stylesheet" href="~/Content/stylesheet.css" />
+    <script src="~/Scripts/jquery-2.2.2.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/additional-methods.js "></script>    
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/jquery.timeago.js"></script>
+    <script src="~/Scripts/jquery.autocomplete.js"></script>
+    <script src="~/Scripts/critterApiService.js"></script>
+    <script src="~/Scripts/messageThreadRefresh.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("time.timeago").timeago();
+        })
+    </script>
+</head>
+<body>
+    <header>
+        <a href="@Url.Action("Index", "Home")"><img src="~/Content/img/logo.png" class="img-responsive" /></a>
+    </header>
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#critterNavBar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>                
+            </div>
+            <div class="collapse navbar-collapse" id="critterNavBar">
+                @Html.Action("GetAuthenticatedUser", "Critter")
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        @RenderBody()
+    </div>
+
+    <footer>
+        Copyright @DateTime.Now.Year Critter Inc.
+    </footer>
+
+</body>
+</html>

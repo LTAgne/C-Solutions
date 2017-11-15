@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "LeavingSite";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>You are leaving the site in <span id="countdown">10</span> seconds</h2>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        setInterval(function () {
+
+            var currentTimeLeft = parseInt($("#countdown").text());
+            currentTimeLeft--;
+
+            if (currentTimeLeft >= 0) {
+                $("#countdown").text(currentTimeLeft);
+            }
+            else {
+                var destinationUrl = getParameterByName("destinationUrl");
+                document.location.href = destinationUrl;
+            }
+
+
+        }, 1000);
+
+        function getParameterByName(name, url) {
+            if (!url) {
+                url = window.location.href;
+            }
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+    });
+</script>

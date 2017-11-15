@@ -1,0 +1,30 @@
+﻿@using Critter.Web.Extensions;
+@model Critter.Web.Models.Data.Conversation
+
+@{
+    ViewBag.Title = "Conversations";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Private Conversation with @Model.WithUser</h2>
+
+<ol class="message-list">
+    @foreach (var message in Model.Messages)
+    {
+        var className = (message.Sender.ToLower() == Model.ForUser.ToLower()) ? "from" : "to";
+
+        <li class="message @className">
+            <span class="username">@message.Sender</span>
+            <span class="message-text">@Html.Raw(message.MessageText)</span>
+            <time class="timeago timestamp" datetime="@message.CreatedDate.ToString("o")">@message.CreatedDate.TimeAgo()</time>
+        </li>
+    }
+</ol>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        setInterval(refreshActiveThread, 5000);
+    });
+</script>
+

@@ -1,0 +1,33 @@
+﻿@using Critter.Web.Extensions;
+@model List<Critter.Web.Models.Data.Message>
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Latest Messages</h2>
+
+@if (Model.Count == 0)
+{
+    <p>No messages to display!</p>
+}
+else
+{
+    <ol class="message-list">
+        @foreach (var message in Model)
+        {
+            <li class="message">
+                <span class="username">@Html.ActionLink(message.Sender, "SearchMessages", "Home", new { userName = message.Sender }, null)</span>
+                <span class="message-text">@message.MessageText</span>
+                <time class="timeago timestamp" datetime="@message.CreatedDate.ToString("o")">@message.CreatedDate.TimeAgo()</time>
+            </li>
+        }
+    </ol>
+}
+
+<script>
+    $(document).ready(function () {
+        // Call the refresh message feed every 5 seconds
+        setInterval(refreshMessageFeed, 5000);
+    });
+</script>

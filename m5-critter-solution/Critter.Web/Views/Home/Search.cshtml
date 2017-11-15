@@ -1,0 +1,25 @@
+﻿@using Critter.Web.Extensions;
+@model Critter.Web.Models.SearchMessageViewModel
+@{
+    ViewBag.Title = "SearchMessages";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@if (!String.IsNullOrEmpty(Model.Username))
+{
+    <h2>Latest Messages From @Model.Username</h2>
+
+
+    <ol class="message-list">
+        @foreach (var message in Model.Messages)
+        {
+            <li class="message">
+                <span class="message-text">@message.MessageText</span>
+                <time class="timeago timestamp" datetime="@message.CreatedDate.ToString("o")">@message.CreatedDate.TimeAgo()</time>
+            </li>
+        }
+    </ol>
+}
+
+
